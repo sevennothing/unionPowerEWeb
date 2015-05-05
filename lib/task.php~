@@ -1,0 +1,166 @@
+<?php
+class Task
+{
+    private $tid;     // task id
+    private $fields;  // other record fields
+
+    // initialize a User object
+    public function __construct()
+    {
+        $this->tid = null;
+        $this->fields = array('tasktype' => '',
+                              'taskinfo' => '',
+                              'taskscore' => '',
+                              'taskpriv' => 100,
+                              'taskstate' => 'pause',
+							  			'starttime' => '',
+							  			'stoptime' =>'',
+							  			'manager' => '',
+							  			'member' => '',
+							  			'note' => 'add note'
+							  			);
+    }
+
+    // override magic method to retrieve properties
+    public function __get($field)
+    {
+        if ($field == 'taskId')
+        {
+            return $this->tid;
+        }
+        else 
+        {
+            return $this->fields[$field];
+        }
+    }
+
+    // override magic method to set properties
+    public function __set($field, $value)
+    {
+        if (array_key_exists($field, $this->fields))
+        {
+            $this->fields[$field] = $value;
+        }
+    }
+
+        
+    // return an object populated based on the record's task id
+    public static function getById($tid)
+    {
+        $t = new Task();
+
+        $query = sprintf('SELECT TASK_TYPE, TASK_INFO, TASK_SCORE, TASK_PRIV, TASK_STAT, 
+        		TASK_START, TASK_STOP, TASK_MANAGER, TASK_MEMBER,TASK_NOTE ' .
+            'FROM %sTASK WHERE TASK_ID = %d',
+            DB_TBL_PREFIX,
+            $tid);
+        $result = mysql_query($query, $GLOBALS['DB']);
+
+        if (mysql_num_rows($result))
+        {
+            $row = mysql_fetch_assoc($result);
+            $t->tasktype = $row['TASK_TYPE'];
+            $t->taskinfo = $row['TASK_INFO'];
+            $t->taskscore = $row['TASK_SCORE'];
+            $t->taskpriv = $row['TASK_PRIV'];
+            $t->taskstate = $row['TASK_STAT'];
+            $t->starttime = $row['TASK_START'];
+            $t->stoptime = $row['TASK_STOP'];
+            $t->manager = $row['TASK_MANAGER'];
+     			$t->member = $row['TASK_MEMBER'];
+     			$t->note = $row['TASK_NOTE'];    
+            $t->tid = $tid;
+        }
+        mysql_free_result($result);
+
+        return $t;
+    }
+    
+    public static function getByManger($manager)
+    {
+        $t = new Task();
+        $query = sprintf('SELECT TASK_ID, TASK_TYPE, TASK_INFO, TASK_SCORE, TASK_PRIV, TASK_STAT, 
+        		TASK_START, TASK_STOP, TASK_MEMBER,TASK_NOTE ' .
+            'FROM %sTASK WHERE TASK_MANAGER = "%s"',
+            DB_TBL_PREFIX,
+            $manager);
+        $result = mysql_query($query, $GLOBALS['DB']);
+
+        if (mysql_num_rows($result))
+        {
+            $row = mysql_fetch_assoc($result);
+            $t->tid = $row['TASK_ID'];
+            $t->tasktype = $row['TASK_TYPE'];
+            $t->taskinfo = $row['TASK_INFO'];
+            $t->taskscore = $row['TASK_SCORE'];
+            $t->taskpriv = $row['TASK_PRIV'];
+            $t->taskstate = $row['TASK_STAT'];
+            $t->starttime = $row['TASK_START'];
+            $t->stoptime = $row['TASK_STOP'];
+            $t->manager = $manager;
+     			$t->member = $row['TASK_MEMBER'];
+     			$t->note = $row['TASK_NOTE'];    
+            
+        }
+        mysql_free_result($result);
+
+        return $t;
+    }
+    public static function getBymember($member)
+    {
+        $query = sprintf('SELECT TASK_ID, TASK_TYPE, TASK_INFO, TASK_SCORE, TASK_PRIV, TASK_STAT, 
+        		TASK_START, TASK_STOP, TASK_MANAGER,TASK_NOTE ' .
+            'FROM %sTASK WHERE TASK_MEMBER like \'%%s%\'',
+            DB_TBL_PREFIX,
+            $member);
+        $result = mysql_query($query, $GLOBALS['DB']);
+        /*
+		  $rownum = mysql_num_rows($result);
+		  		 
+        if ($rownum)
+        {
+        		
+            $row = mysql_fetch_assoc($result);
+            for($i=0;i<$rownum;i++)
+            {
+            $t[i] = new Task();
+            $t[i]->tid = $row[i]['TASK_ID'];
+            $t[i]->tasktype = $row[i]['TASK_TYPE'];
+            $t[i]->taskinfo = $row[i]['TASK_INFO'];
+            $t[i]->taskscore = $row[i]['TASK_SCORE'];
+            $t[i]->taskpriv = $row[i]['TASK_PRIV'];
+            $t[i]->taskstate = $row[i]['TASK_STAT'];
+            $t[i]->starttime = $row[i]['TASK_START'];
+            $t[i]->stoptime = $row[i]['TASK_STOP'];
+            $t[i]->manager = $row[i]['TASK_MANAGER'];
+     			$t[i]->member = $member;
+     			$t[i]->note = $row[i]['TASK_NOTE'];  
+            }
+              
+            
+        }
+        mysql_free_result($result);
+		*/
+       // return $t;
+       return($result);
+    }
+     
+	 // save the record to the database
+    public function save()
+    {
+        if ($this->tid)
+        {
+            $query = sprintf('UPDATE %sTASK SET TASK_STAT = "%s" ,' . 
+            	'TASK_NOTE = "%s" ' .
+            	'WHERE TASK_ID = %d',
+                DB_TBL_PREFIX,
+                mysql_real_escape_string($this->taskstate, $GLOBALS['DB']),
+                mysql_real_escape_string($this->note, $GLOBALS['DB']),
+                $this->tid);
+            mysql_query($query, $GLOBALS['DB']);
+        }
+        
+    }
+}
+
+?>

@@ -1,0 +1,42 @@
+
+function comitselftaskModify(rows)
+{
+	//var phpf = "lib/task_database.php?num=3";
+	var phpf = "homepage.php?num=" + rows;
+	
+	for(var i=0;i<rows;i++)
+	{
+		var getid = "selftask_textarea_" + i;
+		var note = document.getElementById(getid).value;
+		var tid =  document.getElementById(getid).name;
+		//var tstat = document.getElementById(getid).name;
+		var phpf = phpf + "&tid"+ i +"=" + tid + "&note" + i +"=" + note;
+		
+	}
+	document.getElementById('selftaskaction').href = phpf;
+	
+}
+
+function displayState(cot)
+{
+	for(var i=0;i<cot;i++)
+	{
+		var selectid = "selftask_state_select_" + i;
+	
+		var obj = document.getElementById(selectid);
+	
+		var curentStat = document.getElementById(selectid).name;
+		//alert(curentStat);
+		switch(curentStat)
+		{
+			case "s": var num=0;break;
+			case "p": var num=1;break;
+			case "c": var num=2;break;
+			case "k": 
+			default: var num=3;break;
+					
+		}
+		obj.options[num].selected = true;
+		
+	}
+}

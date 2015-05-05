@@ -1,0 +1,264 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1" onload="getSVGDoc(evt)"  onzoom="ZoomControl()"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<script xlink:href="js/tool_tip.js" type="text/javascript"/>
+
+
+<g id="zigbee01" onmouseover="ShowTooltip(evt,'zigbee module,\r\nmaybe sensor')" onmouseout="HideTooltip(evt)">
+	<a xlink:href="zigbee.php" target="_blank">
+		<image xlink:href="img/zigbee.jpg" x="10" y="10" height="60px" width="60px"/>
+		<text x="20" y="80" stytle="font-size:12px;font-family;simsun">zigbee 1 </text>
+	</a>
+</g>
+
+<g id="zigbee02" onmouseover="ShowTooltip(evt,'zigbee module,maybe sensor')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/zigbee.jpg" x="10" y="100" height="60px" width="60px"/>
+	<text x="20" y="170" stytle="font-size:12px;font-family;simsun">zigbee 2 </text>
+</g>
+
+<g id="zigbee03" onmouseover="ShowTooltip(evt,'zigbee module,maybe sensor')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/zigbee.jpg" x="10" y="190" height="60px" width="60px"/>
+	<text x="20" y="260" stytle="font-size:12px;font-family;simsun">zigbee 3 </text>
+</g>
+
+<g id="zigbee04" onmouseover="ShowTooltip(evt,'zigbee module,maybe sensor')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/zigbee.jpg" x="10" y="280" height="60px" width="60px"/>
+	<text x="20" y="350" stytle="font-size:12px;font-family;simsun">zigbee 4 </text>
+</g>
+
+<g id="line1" onmouseover="ShowTooltip(evt,'zigbee link...')" onmouseout="HideTooltip(evt)">
+	<line x1="90" y1="90" x2="200" y2="170"
+	style="stroke:rgb(155,205,155);stroke-width:2;stroke-dasharray:6">
+	<animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+   </line>
+</g>
+
+<g id="line2" onmouseover="ShowTooltip(evt,'zigbee link...')" onmouseout="HideTooltip(evt)">
+	<line x1="90" y1="150" x2="200" y2="170"
+	style="stroke:rgb(155,205,155);stroke-width:2;stroke-dasharray:6">
+	<animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+   </line>
+</g>
+
+<g id="line3" onmouseover="ShowTooltip(evt,'zigbee link...')" onmouseout="HideTooltip(evt)">
+	<line x1="90" y1="230" x2="200" y2="170"
+	style="stroke:rgb(155,205,155);stroke-width:2;stroke-dasharray:6">
+	<animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+   </line>
+</g>
+
+<g id="line4" onmouseover="ShowTooltip(evt,'zigbee link...')" onmouseout="HideTooltip(evt)">
+	<line x1="90" y1="310" x2="200" y2="170"
+	style="stroke:rgb(155,205,155);stroke-width:2;stroke-dasharray:6">
+	<animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+   </line>
+</g>
+
+
+<g id="bookpc" onmouseover="ShowTooltip(evt,'NoteBook')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/bookpc.JPG" x="10" y="400" height="60px" width="60px"/>
+	<text x="20" y="470" stytle="font-size:12px;font-family;simsun">Notebook</text>
+</g>
+
+
+<g id="PC" onmouseover="ShowTooltip(evt,'PC')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/pc.JPG" x="180" y="400" height="60px" width="60px"/>
+	<text x="180" y="470" stytle="font-size:12px;font-family;simsun">PC</text>
+</g>
+
+<g id="mobile" onmouseover="ShowTooltip(evt,'mobile phone')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/mobile.PNG" x="300" y="400" height="60px" width="60px"/>
+	<text x="280" y="470" stytle="font-size:12px;font-family;simsun">mobile phone</text>
+</g>
+
+<g id="switch" onmouseover="ShowTooltip(evt,'100/1000M switch')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/switch.PNG" x="420" y="400" height="60px" width="60px"/>
+	<text x="420" y="470" stytle="font-size:12px;font-family;simsun">交换机</text>
+</g>
+
+<g id="serverMachine" onmouseover="ShowTooltip(evt,'服务器，存储大容量信息，可能不具备信息的冗余保护，不支持7x24h长时间工作。')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/server.JPG" x="540" y="250" height="60px" width="60px"/>
+	<text x="520" y="320" stytle="font-size:12px;font-family;simsun">家庭服务器(可选)</text>
+</g>
+
+<g id="iptv" onmouseover="ShowTooltip(evt,'IPTV')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/iptv.JPG" x="540" y="330" height="60px" width="60px"/>
+	<text x="550" y="400" stytle="font-size:12px;font-family;simsun">IPTV</text>
+</g>
+
+<g id="ipphone" onmouseover="ShowTooltip(evt,'ip phone')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/ipphone.JPG" x="540" y="420" height="60px" width="60px"/>
+	<text x="550" y="490" stytle="font-size:12px;font-family;simsun">ip 电话</text>
+</g>
+
+<g id="printer" onmouseover="ShowTooltip(evt,'network printer')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/printer.JPG" x="540" y="500" height="60px" width="60px"/>
+	<text x="530" y="570" stytle="font-size:12px;font-family;simsun">网络打印机</text>
+</g>
+
+
+
+
+<g id="modem" onmouseover="ShowTooltip(evt,'使用ADSL拨号上网')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/phone.PNG" x="380" y="150" height="60px" width="60px"/>
+	<text x="380" y="220" stytle="font-size:12px;font-family;simsun">调制解调器</text>
+</g>
+
+<g id="internet" onmouseover="ShowTooltip(evt,'internet')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/internet.JPG" x="500" y="130" height="120px" width="120px"/>
+	<text x="520" y="230" stytle="font-size:12px;font-family;simsun">互联网，云</text>
+</g>
+
+<g id="line-book-center" onmouseover="ShowTooltip(evt,'WLAN/LAN')" onmouseout="HideTooltip(evt)">
+	<line x1="40" y1="400" x2="220" y2="180"
+	style="stroke:rgb(00,00,99);stroke-width:2"/>
+</g>
+
+<g id="line-pc-center" onmouseover="ShowTooltip(evt,'LAN')" onmouseout="HideTooltip(evt)">
+	<line x1="210" y1="400" x2="220" y2="180"
+	style="stroke:rgb(00,00,99);stroke-width:2"/>
+</g>
+
+<g id="line-phone-center" onmouseover="ShowTooltip(evt,'wifi/2G,3G,4G...')" onmouseout="HideTooltip(evt)">
+	<line x1="330" y1="400" x2="220" y2="180"
+	style="stroke:rgb(00,00,99);stroke-width:2"/>
+</g>
+
+<g id="line-center-modam" onmouseover="ShowTooltip(evt,'ADSL')" onmouseout="HideTooltip(evt)">
+	<line x1="260" y1="180" x2="380" y2="180"
+	style="stroke:rgb(99,00,99);stroke-width:5"/>
+</g>
+
+<g id="line-modam-net" onmouseover="ShowTooltip(evt,'internet')" onmouseout="HideTooltip(evt)">
+	<line x1="440" y1="180" x2="500" y2="180"
+	style="stroke:rgb(00,200,00);stroke-width:5"/>
+</g>
+
+<g id="line-center-switch" onmouseover="ShowTooltip(evt,'LAN')" onmouseout="HideTooltip(evt)">
+	<line x1="240" y1="200" x2="420" y2="400"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	
+</g>
+
+<g id="line-switch-devs" onmouseover="ShowTooltip(evt,'100/1000M LAN')" onmouseout="HideTooltip(evt)">
+	
+	<line x1="480" y1="430" x2="510" y2="430"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	<line x1="510" y1="280" x2="540" y2="280"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	<line x1="510" y1="360" x2="540" y2="360"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	<line x1="510" y1="450" x2="540" y2="450"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	<line x1="510" y1="530" x2="540" y2="530"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	<line x1="510" y1="280" x2="510" y2="530"
+	style="stroke:rgb(22,99,99);stroke-width:5; fill-opacity;0" />
+	
+</g>
+
+
+<g id="ihhs-center" onmouseover="ShowTooltip(evt,'IHHS center device')" onmouseout="HideTooltip(evt)">
+	<image xlink:href="img/ihhs.JPG" x="200" y="150" height="60px" width="60px"/>
+	<text x="180" y="220" stytle="font-size:12px;font-family;simsun">IHHS center Device </text>
+</g>
+
+<g id="tooltip" style="pointer-events: none">
+    <rect id="ttr" x="0" y="0" rx="10" ry="10" width="100" height="20"
+      style="visibility: hidden"/>
+    <text id="ttt" x="0" y="0" width="20" height="50" style="visibility: hidden">dyn. Text</text>
+</g>
+
+<desc>Referenced items</desc>
+<defs>
+	<g id="wave">
+	<path d="m10,10 a2,3 0 1,0 0,8"
+        stroke="rgb(155,205,155)" stroke-width="2" fill="none" />  
+   <path d="m20,10 a2,3 0 1,1 0,8"
+        stroke="rgb(155,205,155)" stroke-width="2" fill="none" /> 
+   <path d="m5,8 a3,4 0 1,0 0,12"
+        stroke="rgb(155,205,155)" stroke-width="2" fill="none" /> 
+   <path d="m25,8 a3,4 0 1,1 0,12"
+        stroke="rgb(155,205,155)" stroke-width="2" fill="none" /> 
+	</g>
+	<animateColor id="wc" attributeType="CSS" attributeName="fill"
+         from="rgb(255,0,0)" to="rgb(0,0,255)" dur="3s"
+         repeatCount="indefinite"/>
+         
+	
+	
+     <polygon id="lens" points="65,50 185,50 185,75, 150,100
+
+                                          100,100 65,75"
+
+             fill="none" stroke="purple" stroke-width="4"/>
+
+         <radialGradient id="irisGradient">
+
+        <stop offset="25%" stop-color="green" />
+
+        <stop offset="100%" stop-color="dodgerblue" />
+
+     </radialGradient>
+
+        <g id="eye">
+
+        <ellipse cy="50" rx="50" ry="25"
+
+                           fill="none" stroke="black"/>
+
+        <circle cy="50" r="25"/>
+
+        <circle cy="50" r="10" fill="black"/>
+
+     </g>
+
+ </defs>
+
+ 
+
+<g>
+
+ <use xlink:href="#wave" x="38" y="3" >
+ <animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+ </use>
+ 
+ <use xlink:href="#wave" x="38" y="93" >
+ <animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+ </use>
+ 
+ <use xlink:href="#wave" x="38" y="183" >
+ <animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+ </use>
+ 
+ <use xlink:href="#wave" x="38" y="273" >
+ <animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="2s" repeatCount="indefinite" /> 
+ </use>
+ 
+        
+ <use xlink:href="#wave" x="187" y="157" >
+ <animate attributeType="CSS" attributeName="visibility"
+         from="hidden" to="visible" dur="1.5s" repeatCount="indefinite" />
+ </use>
+   
+
+</g>
+
+ 
+ 
+ 
+</svg>
+
+

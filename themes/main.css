@@ -1,0 +1,600 @@
+/* If you want to edit this file, adhere to these rules:
+ *
+ * CSS is seperated by layout, font, and color. It might be a little more
+ * work, but keeping it grouped like this allows for easier implementation
+ * of things like the color switcher.
+ *
+ * The class/id layout is pretty good, though not perfect. We want the structure
+ * to be flexible --- it isn't about the current theme as much as allowing future
+ * themes to do whatever without changing anything but the CSS. Do NOT change
+ * a bunch of classes and ids in the form code without some discussion with
+ * the group.
+ *
+ */
+ 
+/* ---  Layout  --- */
+* { margin: 0; padding: 0; }
+
+html, body {
+	height: 100%;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 1.0em;
+	color: Black;
+	background-color: White;
+}
+
+a { text-decoration: none; }
+
+dd{display: block;-webkit-margin-start: 20px; margin-left: 1em;margin-bottom: 2.2em;}
+
+img { border: 0; }
+
+option { padding-right: 1em; }
+
+th { text-align: left; }
+
+ul { list-style-type: none; }
+
+fieldset { border: 0; }
+
+/* Hide irrelevent elements when using CSS */
+hr,
+#submenu h3,
+#short-status h3 { display: none; }
+
+#thdmenu h3,
+#short-status h3 { display: none; }
+/* ---  Wrapper around everything  --- */
+#container {
+	position: relative;
+	min-height: 100%;
+	width: 100%;
+}
+
+#boradcast
+{
+	position: absolute;
+	clear: both;
+	width:50%;
+	height: 3.5em;
+	top: 6px;
+ 	left: 40%;
+	font-size:0.8em;
+}
+
+
+/* ---  Header  --- */
+#header {
+	clear: both;
+	width: 100%;
+	height: 3.5em;
+	color: #ccc;
+	//background-image: url('logo.JPG');
+	background-image: url('logo.gif');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-color: #f9f9f9;
+}
+
+#header em {
+	display: block;
+	padding-top: 60px;
+	padding-left: 65px;
+	padding-bottom: 10px;
+	color: #808080;
+}
+
+#header h1 { 
+	display: inline; 
+	position:absolute;
+	top:10px;
+   left:100px;
+
+}
+
+/* ---  Short-status  --- */
+#header #short-status {
+	position: absolute;
+	top: -5px;
+	right: 0;
+	height: 4.5em;
+	width: 20em;
+	line-height: 1em;
+	background: #f9f9f9;
+	color: Black;
+}
+
+#short-status ul {
+	white-space: nowrap;
+	margin: 1em 0 0 2em;
+	font-size: 0.9em;
+}
+
+/* ---  Navigation  --- */
+#mainmenu, #submenu {
+	color: Black;
+	width: 100%;
+	height: 2.0em;
+	line-height: 2.0em;
+}
+
+
+
+#mainmenu a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	background: url(/themes/mainnav_hover_bg.png) repeat-x bottom left;
+}
+
+#submenu a:hover {
+	background-color: #A9DAEF;
+	text-decoration: none;
+	font-weight: bold;
+	background: url(/themes/mainnav_hover_bg_inverse.png) repeat-x top left;
+}
+
+
+#mainmenu .selected a {
+	background-color: #339bcc;
+	background: url(/themes/mainnav_active_bg.gif) repeat-x bottom left;
+}
+
+#submenu .selected a {
+	background-color: #339bcc;
+	background: url(/themes/mainnav_active_bg_inverse.gif) repeat-x top left;
+}
+
+
+#mainmenu {
+	font-size: 1em;
+	background: #f9f9f9 url(/themes/mainnav_bg.png) repeat-x bottom;
+	list-style: none;
+	border-bottom: none;
+	border-bottom-color: none;
+}
+
+#mainmenu li {
+	float: left;
+	list-style-type: none;
+	min-width: 2.2em;
+	text-align: center;
+}.self_task_tab tr.member{	background-color:#00e2a2;}
+
+#mainmenu li, #submenu li { white-space: nowrap; }
+
+#mainmenu li a {
+	padding: 0 0.7em 0 0.7em;
+	display: block;
+	color: Black;
+}
+
+#submenu {
+	background: #f9f9f9 url(/themes/mainnav_bg_inverse.png) repeat-x top;
+	list-style: none;
+}
+
+#submenu li {
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	font-size: 0.6em;
+}
+
+#submenu li a {
+	padding: 0 0.6em 0 0.6em;
+	display: block;
+	color: Black;
+}
+
+/* ---  Color switcher  --- */
+#colorswitcher { display: none; }
+
+
+/* ---  Content  --- */
+#content {
+	position: relative;
+	padding: 0.5em 2% 0.5em 2%;
+	text-indent:2em;
+}
+
+#content a { text-decoration: underline; }
+
+#content h2 {
+	font-size: 1.1em;
+	margin-top: 1.0em;
+	margin-bottom: 1.0em;
+}
+
+/* center image and headline vertically */
+#content h2 * { vertical-align: middle; }
+
+#content h3 {
+	margin-bottom: 0.6em;
+	padding: 0.2em;
+	font-size: 1em;
+	background: #f9f9f9 url(/themes/mainnav_bg.png) repeat-x bottom;
+	list-style: none;
+	border-bottom: none;
+	border-bottom-color: none;
+}
+
+#content h3.warning {
+	display: block;
+	color: #E7292C;
+	margin-bottom: 1em;
+	margin-left: 1%;
+	padding: 0.4em;
+	padding-left: 0.8em;
+	border-left: 0.5em solid #E7292C;
+	border-bottom: 1px solid #E7292C;
+	background-color: transparent;
+}
+
+#content .settings { margin-left: 1%; }
+
+#content .settings .clearfix {
+	clear: both;
+	margin-bottom: 1em;
+}
+
+#content .settings-content {
+	position: relative;
+	float: left;
+	width: 54%;
+	margin-left: 2%;
+}
+
+#content select, #content input { margin-top: 0.1em; }
+
+
+
+/* ---  Footer  --- */
+#footer {
+    //display: none; 
+	position:relative;
+	clear: both;
+ 	bottom: 0em;
+ 	text-align: center;
+ 	background-color:#b0e0e6;
+ }
+
+/* ---  Page specific styling  --- */
+/* Packages page */
+.packages {
+	font-size: 0.8em;
+	text-align: left;
+}
+
+.repositories { font-size: 0.6em; }
+
+/* ---  General styling  --- */
+.separator { display: block; }
+
+.smalltext {
+	display: inline;
+	font-size: 0.9em;
+	font-weight: lighter;
+}
+
+
+.failed-validation {
+	display: inline;
+	width: 40%;
+	text-align: left;
+	font-size: 1.0em;
+	font-style: italic;
+	color: Red;
+}
+
+.warning,
+.update-available,
+.warning-light {
+	color: #9A2C2C;
+	display: inline;
+}
+
+/* background color for odd lines/list items */
+.odd { background-color: #E5E7E9; }
+
+/* Progressbar */
+.progressbar {
+	border: 1px solid #315579;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	padding: 2px;
+	font-size: 0.8em;
+}
+
+.progress {
+	background-color: #AAC1D9;
+	padding: 0.1em 0 0.1em 0;
+	display: block;
+	text-align: center;
+}
+
+.gradualshine {
+        filter:alpha(opacity=30);
+        -moz-opacity:0.3;
+}
+
+.balloonstyle{
+        position:absolute;
+        top: -500px;
+        left: 0;
+        padding: 5px;
+        visibility: hidden;
+        border:1px solid black;
+        font:normal 12px Verdana;
+        line-height: 18px;
+        z-index: 100;
+        background-color: white;
+        width: 200px;
+        /*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135,Strength=5);
+}
+
+#arrowhead{
+z-index: 99;
+position:absolute;
+top: -500px;
+left: 0;
+visibility: hidden;
+}
+
+
+#scrollBox {
+	position: absolute;
+	width: 90%;
+	margin: 0 auto;
+	font-size: 0.7em;
+}
+#outerscrollBox{
+	position: relative;
+        width: 50%; /*marquee width */
+        height: 10em; /*marquee height */
+        overflow: hidden;
+        border: 1px solid #ccc;
+        padding: 1em;
+        margin-top: 1em;
+}
+#scrollBox h1 {
+        font-weight: bold;
+        margin-bottom: 1em;
+}
+#scrollBox h2 { margin: 2em 0 1em; }
+#scrollBox h2 em {
+        font-weight: normal;
+        font-size: 0.9em;
+}
+#scrollBox ul {
+        list-style-type: disc;
+        list-style-position: inside;
+}
+#scrollBox p { margin-bottom: 0.5em; }
+#scrollBox li { margin: 0.8em; }
+
+.pwd-modify-tip p{color:#ff0000;	font-size:0.8em;}
+
+#svg
+{
+ 	position: relative;
+ 	left: -2%;
+	height:100%;
+	width:100%;
+}
+#scoresvg
+{
+	position: relative;
+ 	left: -6%;
+ 	top:10px;
+	height:100%;
+	width:100%;
+}
+#scorediv
+ {
+   position: absolute;
+   width: 40%;
+   height: 30%;
+   visibility: visible;
+   z-index: 10;
+   background-color: #f5f5dc;
+   color: Yellow;
+   text-align: left;
+   vertical-align: middle;
+   line-height: 25px;
+   right: 2%;
+   top: 0px;
+}
+#scorediv h5
+{
+	background:#63B8FF;
+	color:white;
+}
+table.scoretab {
+    line-height:13px;
+    overflow:hidden;
+    word-wrap:break-word;
+    table-layout:fixed;
+} 
+
+table.scoretab td
+{
+	font-size:0.8em;
+}
+#info .baseinfo
+{	position: absolute;
+	color:#e5e5e5;
+	font-size:1em;
+	background-color:#c02222;
+	left:5%;
+}
+#info table
+{
+	position: relative;
+	color: red;
+	font-size:1em;
+	line-height:1.5em;
+	left:5%;
+	width:40%;
+	
+	table-layout:fixed;
+}
+
+#info td.width_item
+{	
+
+	font-size:1em;
+	line-height:1.5em;
+	width:20%;
+	font-weight:bold;
+}
+#info td.width_case
+{
+	color:#7202a0;
+	font-size:1em;
+	line-height:1.5em;
+	width:80%;
+	background-color:#82e330;
+
+}
+#info td.width_cash
+{	
+	color:#7202a0;
+	font-size:1em;
+	line-height:1.5em;
+	width:20%;
+	background-color:#82e330;
+
+}
+
+.self_task
+{
+	position: absolute;
+	top:0px;
+	right:1px;
+	width:54%;
+	font-size:1em;
+	text-indent:0em;
+	background-color:#f2f2f2;
+	
+}
+
+.self_task_tab
+{
+	position: relative;
+	width:100%;
+	border:1px solid #000000;
+	padding:0 0 0 0;
+	line-height:1.2em;
+	font-size:0.8em;
+	text-align:center;
+	table-layout:fixed;
+   empty-cells:show; 
+   border-collapse: collapse;
+   margin:0 auto;
+	background-color: #F0FBEB;
+	word-break:break-all;
+	word-wrap:break-word;
+	
+}
+
+.self_task_copicon ul{float:left;padding:0;width:100%;margin:0;list-style-type:none;white-space:nowrap;}
+.self_task_copicon a
+{
+	float:left;
+	width:1em;
+	padding:0.2em 0.6em;
+	border-right:1px solid white;
+}
+.self_task_copicon li {display:inline}
+
+.self_task_title{position: relative;color:#232323; top:0px; left:0px;font-size:0.9em;}
+.slef_task_sm{position: relative; color:#dd0000;  top:0px;left:0em; font-size:0.8em; }
+.self_task_tab tr.manager{	background-color:#22a0a2;}
+.self_task_tab tr.member{	background-color:#00e2a2;}
+.selftask_state{
+	position: relative;border:none;width:100%; padding: 0px 0px 0px 0px;background-color:#22a0a2;
+	color:#ffff28;font-size:1.1em;text-align:left;line-height:1em;
+}
+.selftask_state option{
+	position: relative;border:none;width:100%; padding: 0px 0px 0px 0px;background-color:#ffffff;
+	color:#000000;font-size:1.1em;text-align:left;line-height:1em;
+}
+.self_task_tab textarea.manager
+{ 
+	position: relative;border:none;width:100%; padding: 0px 0px 0px 0px;background-color:#22a0a2;
+	color:#3400ff;font-size:1em;text-align:left;line-height:1em;
+}
+.self_task_tab td{border:1px solid #000000;color:#222222}
+.td_2hz{	position: relative;	width:2.5em;}
+.td_3hz{	position: relative;	width:3.2em;}
+.td_4hz{	position: relative;	width:4.5em;}
+.td_5hz{	position: relative;	width:5em;}
+
+#file span.title
+{	position: absolute;
+	color:#e5e5e5;
+	font-size:1em;
+	background-color:#c02222;
+	left:5%;
+}
+
+.tmp_return_info
+{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:0.8em;
+  	width:40%;
+  	line-height:1em;
+ 	border-collapse:collapse;
+	border:1px solid #98bf21;
+}
+.files-header{color:#666;font-size:1em;line-height:41px;height:40px;overflow:hidden}
+.b-header{border-width:1px}
+.b-bdr-1{border:1px solid #98bf21}
+.flag-4 .itt-10,.flag-10 .itt-10{margin-left:24px}
+.indicator,{display:block;height:40px;font-weight:400;padding:0}
+
+.c1,.file-col{width:60%;text-align:left}
+
+
+.c2,.size-col{width:20%;text-align:left}
+.c3{overflow:hidden;width:20%;text-align:left}
+.time-col span{padding-left:10px}
+
+.col {line-height: 34px;float: left;}
+
+
+#infiniteListView span {color: #666;font: 12px simsun;outline: 0 none;line-height: 35px;}
+
+.inline-commands .action-dd,.upload-crumb-label .action-dd{position:absolute;width:20px;height:20px}
+.more-btn{position:absolute;cursor:pointer;top:2px;left:60%;z-index:9999}
+.more-btn li{float:right;width:26px}
+
+.file-list{margin:0 15px}
+.file-item {border-bottom:1px solid #98bf21;position:relative;}
+.inline-file-col a{outline:0 none;font:15px/1.5 simsun;color:#000;vertical-align:middle;zoom:1;line-height:20px}
+.inline-file-col{padding:0;float:left;width:50%;overflow-x:hidden;text-overflow:ellipsis;white-space:nowrap;_display:inline;_margin-top:3px}
+.file-col .inline-file-col,.inline-file-col .sprite-list-ic{padding:0}
+.btn .clearfix,.main{zoom:1}
+
+
+
+.b-in-blk {display: inline-block;zoom:1;vertical-align: middle;}
+.sprite-list-ic{background:url('../img/sprite_list_icon.gif') no-repeat; 0 0}
+
+.icon-download{width:20px;height:20px;background-position:-1px -110px;}
+.icon-delet{width:20px;height:20px;background-position:-98px -111px;}
+.icon-edit{width:20px;height:25px;background-position:-129px -108px;}
+.icon-ok{width:25px;height:20px;background-position:-194px -112px;}
+.file_pdf{width:30px;height:25px;background-position:-62px -78px;}
+.file_doc{width:30px;height:25px;background-position:-94px -78px;}
+.file_excel{width:30px;height:25px;background-position:-126px -78px;}
+.file_jpg{width:30px;height:25px;background-position:0 -78px;}
+.file_txt{width:30px;height:25px;background-position:-158px -78px;}
+.file_rar{width:30px;height:25px;background-position:-350px -78px;}
+.usericon{width:25px;height:30px;background-position:-479px -108px}
+.email{width:30px;height:25px;background-position:-255px -109px;}
+.emial2{width:26px;height:20px;background-position:-289px -111px;}
+.icon_G_ok{width:18px;height:18px;background-position:-323px -111px;}
+.icon_R_drop{width:18px;height:18px;background-position:-351px -111px;}
+
